@@ -1,3 +1,4 @@
+import { expect } from 'vitest';
 import { mount } from '@vue/test-utils';
 import Vue, { ComponentOptions } from 'vue';
 
@@ -95,7 +96,6 @@ export function dualMount<V extends Vue>(component: ComponentOptions<V>) {
 		frag,
 		normal,
 
-		// eslint-disable-next-line @typescript-eslint/ban-types
 		setData(data: object) {
 			return Promise.all([
 				normal.setData(data),

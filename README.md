@@ -4,12 +4,12 @@ Use [Vue 3's Fragment feature](https://v3.vuejs.org/guide/migration/fragments.ht
 
 ```vue
 <template>
-    <fragment> ⬅ This root element will not exist in the DOM
+    <Fragment> ⬅ This root element will not exist in the DOM
 
         <li>Element 1</li>
         <li>Element 2</li>
         <li>Element 3</li>
-    </fragment>
+    </Fragment>
 </template>
 
 <script>
@@ -25,6 +25,13 @@ export default {
 
 👉 [Try it out on CodePen](https://codepen.io/hirokiosame/pen/PoNVZbV)!
 
+### Features
+- **✅ Multiple root nodes** Without creating a functional component!
+- **🔥 SSR** Unwraps the root element on client-side post-hydration!
+- **⚡️ Directives** Supports `v-if`, `v-for`, and `v-html`!
+- **👩‍🔬 Battle-tested** Checkout the tests [here](/test/)!
+
+
 <table>
    <td>
        <strong>🔥 Pro-tip</strong>
@@ -34,13 +41,17 @@ export default {
    </td>
 </table>
 
-<sub>Support this project by ⭐️ starring and sharing it. [Follow me](https://github.com/privatenumber) to see what other cool projects I'm working on! ❤️</sub>
+<br>
 
-## 🌟 Features
-- **✅ Multiple root nodes** Without creating a functional component!
-- **🔥 SSR** Unwraps the root element on client-side post-hydration!
-- **⚡️ Directives** Supports `v-if`, `v-for`, and `v-html`!
-- **👩‍🔬 Battle-tested** Checkout the tests [here](/test/)!
+<p align="center">
+	<a href="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=platinum">
+		<picture>
+			<source width="830" media="(prefers-color-scheme: dark)" srcset="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=platinum&image=dark">
+			<source width="830" media="(prefers-color-scheme: light)" srcset="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=platinum&image">
+			<img width="830" src="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=platinum&image" alt="Premium sponsor banner">
+		</picture>
+	</a>
+</p>
 
 ## 🚀 Install
 ```sh
@@ -56,9 +67,9 @@ The Component API is designed to be used at the root of the template. It should 
 Import `Fragment` and use it as the root element of your component:
 ```vue
 <template>
-    <fragment>
+    <Fragment>
         Hello world!
-    </fragment>
+    </Fragment>
 </template>
 
 <script>
@@ -116,20 +127,20 @@ Vue.directive('frag', frag)
 
 #### Returning multiple root nodes <a href="https://codepen.io/hirokiosame/pen/PoNVZbV"><img src="https://img.shields.io/badge/codepen.io-demo-blue" valign="bottom"></a>
 Component API
-```vue
+```html
 <template>
-    <fragment> <!-- This element will be unwrapped -->
+    <Fragment> <!-- This element will be unwrapped -->
 
         <div v-for="i in 10">
             {{ i }}
         </div>
-    </fragment>
+    </Fragment>
 </template>
 ```
 
 
 Directive API
-```vue
+```html
 <template>
     <div v-frag> <!-- This element will be unwrapped -->
 
@@ -143,17 +154,17 @@ Directive API
 #### Unwrapping the root node from a component
 Use the Directive API to unwrap the root node of a component.
 
-```vue
+```html
 <template>
     <div>
         <!-- Unwraps the root node of some-custom-component -->
-        <some-custom-component v-frag />
+        <SomeCustomComponent v-frag />
     </div>
 </template>
 ```
 
 #### Supports v-if too
-```vue
+```html
 <template>
     <div v-frag>
         <template v-if="isShown">
@@ -179,6 +190,18 @@ export default {
 }
 </script>
 ```
+
+<br>
+
+<p align="center">
+	<a href="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=gold">
+		<picture>
+			<source width="830" media="(prefers-color-scheme: dark)" srcset="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=gold&image=dark">
+			<source width="830" media="(prefers-color-scheme: light)" srcset="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=gold&image">
+			<img width="830" src="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=gold&image" alt="Premium sponsor banner">
+		</picture>
+	</a>
+</p>
 
 ## 💁‍♀️ FAQ
 
@@ -230,3 +253,28 @@ Here are all the DOM APIs Vue.js uses that are patched:
 - [vue-proxi](https://github.com/privatenumber/vue-proxi) - 💠 Tiny proxy component
 - [vue-pseudo-window](https://github.com/privatenumber/vue-pseudo-window) - 🖼 Declaratively interface window/document in your Vue template
 - [vue-v](https://github.com/privatenumber/vue-v) - render vNodes via component template
+
+## Sponsors
+
+<p align="center">
+	<a href="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=silver1">
+		<picture>
+			<source width="410" media="(prefers-color-scheme: dark)" srcset="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=silver1&image=dark">
+			<source width="410" media="(prefers-color-scheme: light)" srcset="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=silver1&image">
+			<img width="410" src="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=silver1&image" alt="Premium sponsor banner">
+		</picture>
+	</a>
+	<a href="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=silver2">
+		<picture>
+			<source width="410" media="(prefers-color-scheme: dark)" srcset="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=silver2&image=dark">
+			<source width="410" media="(prefers-color-scheme: light)" srcset="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=silver2&image">
+			<img width="410" src="https://privatenumber-sponsors.vercel.app/api/sponsor?tier=silver2&image" alt="Premium sponsor banner">
+		</picture>
+	</a>
+</p>
+
+<p align="center">
+	<a href="https://github.com/sponsors/privatenumber">
+		<img src="https://cdn.jsdelivr.net/gh/privatenumber/sponsors/sponsorkit/sponsors.svg">
+	</a>
+</p>

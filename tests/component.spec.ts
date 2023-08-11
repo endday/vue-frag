@@ -1,11 +1,7 @@
-/**
- * @jest-environment jsdom
- */
-
-import Vue from 'vue';
+import { test, expect } from 'vitest';
+import Vue, { defineComponent } from 'vue';
 import { mount } from '@vue/test-utils';
-import { defineComponent } from '@vue/composition-api';
-import { Fragment } from '..';
+import { Fragment } from '../src/index.esm.js';
 
 Vue.config.ignoredElements = [/./];
 
